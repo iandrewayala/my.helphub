@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Charities List</title>
+    <style>
+        .map-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .map {
+            width: 100%;
+            height: 450px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="charities.html">Home</a></li>
+  <li><a href="index.html">Login</a></li>
+  <li><a href="charity_profile.html">Random Volunteer</a></li>
+</ul>
+
+<h1>Our List of Charities:</h1>
+
+<div>
+    <h2>The Water Charity</h2>
+    <p>In this charity, we are focused on helping out the people with no access to clean water. This non-profit organization was formed in 2006 with the goal of providing people in developing nations with the healthy drinking water. As of 2019, this organization has funded over $370 million.</p>
+    <p>The map below will show you where our headquarters is located.</p>
+    <form action="charity_profile.html">
+    <input type="submit" value="Volunteer Now">
+    </form> <br>
+    <div id="map1" class="map"></div>
+</div> <br>
+
+<div class="map-container">
+    <h2>Feeding America</h2>
+    <p>In this charity, we tend to look out for the needy portion of the population. We use the donations you give to make an impact on any generation in need of these things. Formed in 1982 by the Rotary Club of Milwaukee, the main mission is to defeat America's hunger problem.</p>
+    <p>The map below will show you where our headquarters is located.</p>
+
+    <form action="charity_profile.html">
+      <input type="submit" value="Volunteer Now">
+      </form> <br>
+    <div id="map2" class="map"></div>
+</div><br>
+
+<div class="map-container">
+    <h2>The World Wildlife Fund</h2>
+    <p>The main goal of this non-profit charity is to help educate people about the ongoing troubles that occur in the wilderness, donate money to help save any endangered species, and adopt these poor creatures. The charity provides users with toolkits which include a reading, a plan to save species, and more resources.</p>
+    <p>The map below will show you where our headquarters is located.</p>
+
+    <form action="charity_profile.html">
+      <input type="submit" value="Volunteer Now">
+      </form> <br>
+    <div id="map3" class="map"></div>
+</div>
+
+<script>
+    function initMap() {
+        let waterpro1 = { lat: 43.20529, lng: -71.53489 };
+        let map1 = new google.maps.Map(document.getElementById('map1'), { zoom: 15, center: waterpro1 });
+        let marker1 = new google.maps.Marker({ position: waterpro1, map: map1 });
+
+        let feedam = { lat: 41.884885569894095, lng: -87.630690526439 };
+        let map2 = new google.maps.Map(document.getElementById('map2'), { zoom: 15, center: feedam });
+        let marker2 = new google.maps.Marker({ position: feedam, map: map2 });
+
+        let wwf = { lat: 38.90650295588638, lng: -77.05159096208264 };
+        let map3 = new google.maps.Map(document.getElementById('map3'), { zoom: 15, center: wwf });
+        let marker3 = new google.maps.Marker({ position: wwf, map: map3 });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOT3DXxyGvL40qS-DshP2a3QaOqRQgfa4&callback=initMap" async defer></script>
+
+</body>
+</html>
